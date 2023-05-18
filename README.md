@@ -7,19 +7,19 @@ Este repositorio contiene los contratos inteligentes que permiten la emisión, t
 ## Tabla de Contenido
 
 - 📄 [Descripción](#-descripción)
-- 💡 [Contrato Inteligente](#💡-contrato-inteligente)
-  - 🔧 [Funcionalidad](#🔧-funcionalidad)
-  - 📦 [Dependencias](#📦-dependencias)
-  - ⚙️ [Requisitos y Configuración](#⚙️-requisitos-y-configuración)
-  - 📖 [Uso](#📖-uso)
-  - 🌟 [Ejemplos de Uso](#🌟-ejemplos-de-uso)
-- 🚀 [Desarrollo](#🚀-desarrollo)
-  - 🤝 [Contribución](#🤝-contribución)
-  - ✔️ [Pruebas](#✔️-pruebas)
-  - 📡 [Despliegue](#📡-despliegue)
-- 📜 [Licencia](#📜-licencia)
-- 👤 [Autor](#👤-autor)
-- 🙏 [Agradecimientos](#🙏-agradecimientos)
+- 💡 [Contrato Inteligente](#-contrato-inteligente)
+  - 🔧 [Funcionalidad](#-funcionalidad)
+  - 📦 [Dependencias](#-dependencias)
+  - ⚙️ [Requisitos y Configuración](#-requisitos-y-configuración)
+  - 📖 [Uso](#-uso)
+  - 🌟 [Ejemplos de Uso](#-ejemplos-de-uso)
+- 🚀 [Desarrollo](#-desarrollo)
+  - 🤝 [Contribución](#-contribución)
+  - ✔️ [Pruebas](#-pruebas)
+  - 📡 [Despliegue](#-despliegue)
+- 📜 [Licencia](#-licencia)
+- 👤 [Autor](#-autor)
+- 🙏 [Agradecimientos](#-agradecimientos)
 
 
 # 📄 Descripción
