@@ -6,7 +6,7 @@ Este repositorio contiene los contratos inteligentes que permiten la emisión, t
 
 ## Tabla de Contenido
 
-- 📄 [Descripción](#📄-descripción)
+- 📄 [Descripción](#-descripción)
 - 💡 [Contrato Inteligente](#💡-contrato-inteligente)
   - 🔧 [Funcionalidad](#🔧-funcionalidad)
   - 📦 [Dependencias](#📦-dependencias)
