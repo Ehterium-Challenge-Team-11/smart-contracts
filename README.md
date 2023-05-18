@@ -1,4 +1,11 @@
+
 # 🐢 Galdappagos - Smart Contract
+
+[![Solidity Version](https://img.shields.io/badge/Solidity-0.8.9-brightgreen)](https://soliditylang.org/)
+[![Smart Contract](https://img.shields.io/badge/Smart%20Contract-NFT-blueviolet)](https://en.wikipedia.org/wiki/Smart_contract)
+[![OpenZeppelin](https://img.shields.io/badge/OpenZeppelin-Framework-363636)](https://openzeppelin.com/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-Development%20Environment-F7952B)](https://hardhat.org/)
+
 
 El repositorio de Smart Contracts de NFTs es parte del ecosistema de Galdappagos, una iniciativa que busca incentivar las donaciones a las Islas Galápagos utilizando tecnología blockchain y tokens no fungibles (NFTs).
 
@@ -62,7 +69,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 A continuación, se detallan los pasos y requisitos necesarios para configurar y utilizar el contrato inteligente Galdappagos:
 
 ### Requisitos
-Versión de Solidity: El contrato inteligente Galdappagos está desarrollado en Solidity y requiere una versión igual o superior a 0.8.9.
+- Versión de Solidity: El contrato inteligente Galdappagos está desarrollado en Solidity y requiere una versión igual o superior a 0.8.9.
 
 ### Pasos de Configuración
 1. Clona el repositorio de los smart contracts de Galdappagos en tu entorno local.
