@@ -1,4 +1,5 @@
-# smart-contracts Galdappagos
+# Galdappagos - Smart Contract
+===
 
 Breve descripción o resumen del proyecto.
 
@@ -21,13 +22,17 @@ Breve descripción o resumen del proyecto.
 
 
 # Descripción
+===
 Descripción más detallada del proyecto y su objetivo principal.
 
 # Contrato Inteligente
-Breve descripción o introducción al contrato inteligente específico.
+===
+El contrato inteligente denominado "Galdappagos" implementa un token no fungible (NFT) utilizando el estándar ERC721 de OpenZeppelin. 
 
 ## Funcionalidad
-Explicación de las principales funciones y características del contrato inteligente.
+Este contrato permite la emisión segura de nuevos tokens NFT a través de la función safeMint, restringida únicamente al propietario del contrato. Además, hereda y utiliza varios contratos base de OpenZeppelin, como ERC721, ERC721Enumerable y ERC721URIStorage, para proporcionar funcionalidades adicionales relacionadas con la enumeración de tokens y el almacenamiento de metadatos URI.
+
+El contrato también incluye funciones de anulación requeridas por Solidity para personalizar el comportamiento en ciertos casos, como antes de transferir tokens (_beforeTokenTransfer), durante la eliminación de un token (_burn), para obtener la URI de un token específico (tokenURI), y para verificar la compatibilidad de interfaces (supportsInterface).
 
 ## Dependencias
 Lista de las dependencias utilizadas por el contrato inteligente, como bibliotecas o contratos externos.
@@ -42,15 +47,18 @@ Instrucciones detalladas sobre cómo utilizar y aprovechar las funciones del con
 Ejemplos prácticos de cómo interactuar con el contrato inteligente en diferentes escenarios.
 
 # Desarrollo
+===
 Información relevante para desarrolladores interesados en contribuir o colaborar con el proyecto.
 
 ## Contribución
 Pautas y reglas para la contribución al proyecto, incluyendo instrucciones sobre cómo clonar el repositorio, configurar el entorno de desarrollo y enviar solicitudes de extracción.
 
 ## Pruebas
+===
 Explicación de cómo ejecutar pruebas unitarias y/o de integración para verificar el correcto funcionamiento del contrato inteligente.
 
 # Despliegue
+===
 Instrucciones sobre cómo desplegar el contrato inteligente en una red blockchain específica, incluyendo consideraciones de seguridad y gas.
 
 # Licencia
