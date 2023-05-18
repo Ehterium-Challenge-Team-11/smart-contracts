@@ -1,42 +1,41 @@
 # 🐢 Galdappagos - Smart Contract
 
-Breve descripción o resumen del proyecto.
 El repositorio de Smart Contracts de NFTs es parte del ecosistema de Galdappagos, una iniciativa que busca incentivar las donaciones a las Islas Galápagos utilizando tecnología blockchain y tokens no fungibles (NFTs).
 
 Este repositorio contiene los contratos inteligentes que permiten la emisión, transferencia y gestión de NFTs vinculados a donaciones específicas. Los NFTs representan activos digitales únicos que pueden ser adquiridos por los donantes como recompensa por su contribución a la conservación de las Islas Galápagos.
 
 ## Tabla de Contenido
 
-- 📄 [Descripción](#descripción)
-- 💡 [Contrato Inteligente](#contrato-inteligente)
-  - 🔧 [Funcionalidad](#funcionalidad)
-  - 📦 [Dependencias](#dependencias)
-  - ⚙️ [Requisitos y Configuración](#requisitos-y-configuración)
-  - 📖 [Uso](#uso)
-  - 🌟 [Ejemplos de Uso](#ejemplos-de-uso)
-- 🚀 [Desarrollo](#desarrollo)
-  - 🤝 [Contribución](#contribución)
-  - ✔️ [Pruebas](#pruebas)
-  - 📡 [Despliegue](#despliegue)
-- 📜 [Licencia](#licencia)
-- 👤 [Autor](#autor)
-- 🙏 [Agradecimientos](#agradecimientos)
+- 📄 [Descripción](#📄-descripción)
+- 💡 [Contrato Inteligente](#💡-contrato-inteligente)
+  - 🔧 [Funcionalidad](#🔧-funcionalidad)
+  - 📦 [Dependencias](#📦-dependencias)
+  - ⚙️ [Requisitos y Configuración](#⚙️-requisitos-y-configuración)
+  - 📖 [Uso](#📖-uso)
+  - 🌟 [Ejemplos de Uso](#🌟-ejemplos-de-uso)
+- 🚀 [Desarrollo](#🚀-desarrollo)
+  - 🤝 [Contribución](#🤝-contribución)
+  - ✔️ [Pruebas](#✔️-pruebas)
+  - 📡 [Despliegue](#📡-despliegue)
+- 📜 [Licencia](#📜-licencia)
+- 👤 [Autor](#👤-autor)
+- 🙏 [Agradecimientos](#🙏-agradecimientos)
 
 
-# Descripción
+# 📄 Descripción
 
 El objetivo principal de este proyecto es proporcionar una plataforma transparente y segura que permita a los donantes recibir NFTs como prueba tangible de su apoyo a la causa. Los contratos inteligentes implementados en este repositorio siguen los estándares ERC721 y hacen uso de la biblioteca OpenZeppelin para garantizar la funcionalidad estándar y la seguridad de los NFTs emitidos.
 
-# Contrato Inteligente
+# 💡 Contrato Inteligente
 
 El contrato inteligente denominado "Galdappagos" implementa un token no fungible (NFT) utilizando el estándar ERC721 de OpenZeppelin. 
 
-## Funcionalidad
+## 🔧 Funcionalidad
 Este contrato permite la emisión segura de nuevos tokens NFT a través de la función `safeMint`, restringida únicamente al propietario del contrato. Además, hereda y utiliza varios contratos base de OpenZeppelin, como ERC721, ERC721Enumerable y ERC721URIStorage, para proporcionar funcionalidades adicionales relacionadas con la enumeración de tokens y el almacenamiento de metadatos URI.
 
 El contrato también incluye funciones de anulación requeridas por Solidity para personalizar el comportamiento en ciertos casos, como antes de transferir tokens (`_beforeTokenTransfer`), durante la eliminación de un token (`_burn`), para obtener la URI de un token específico (`tokenURI`), y para verificar la compatibilidad de interfaces (`supportsInterface`).
 
-## Dependencias
+## 📦 Dependencias
 
 ### OpenZeppelin
 
@@ -58,7 +57,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 ```
 
-## Requisitos y Configuración
+## ⚙️ Requisitos y Configuración
 
 A continuación, se detallan los pasos y requisitos necesarios para configurar y utilizar el contrato inteligente Galdappagos:
 
@@ -80,7 +79,7 @@ npm install @openzeppelin/contracts
 5. Realiza las modificaciones necesarias en el contrato inteligente según tus requisitos específicos. Puedes ajustar los nombres y símbolos del token, así como personalizar las funcionalidades adicionales según tus necesidades.
 
 
-## Uso
+## 📖 Uso
 Instrucciones detalladas sobre cómo utilizar y aprovechar las funciones del contrato inteligente.
 
 1. Compila el contrato inteligente Galdappagos utilizando el compilador de Solidity. Puedes utilizar herramientas como Truffle o Remix para compilar el contrato.
@@ -89,7 +88,7 @@ Instrucciones detalladas sobre cómo utilizar y aprovechar las funciones del con
 
 3. Una vez desplegado, el contrato inteligente Galdappagos estará listo para su uso. Puedes interactuar con él mediante transacciones desde direcciones que tengan los permisos adecuados.
 
-## Ejemplos de Uso
+## 🌟 Ejemplos de Uso
 Ejemplos prácticos de cómo interactuar con el contrato inteligente en diferentes escenarios.
 
 A continuación, se presentan ejemplos prácticos de cómo interactuar con el contrato inteligente Galdappagos en diferentes escenarios:
@@ -133,26 +132,26 @@ function transferNFT(uint256 tokenId, address recipient) public {
 En este ejemplo, se demuestra cómo transferir de forma segura la propiedad de un NFT a otro propietario. Al llamar a la función `transferNFT` y proporcionar el ID del token y la dirección del destinatario, el propietario actual del NFT puede transferir la propiedad a otro usuario. Se verifica si el remitente es el propietario o tiene los permisos necesarios para transferir el token, y luego se realiza la transferencia.
 
 
-# Desarrollo
+# 🚀 Desarrollo
 
 Información relevante para desarrolladores interesados en contribuir o colaborar con el proyecto.
 
-## Contribución
+## 🤝 Contribución
 Pautas y reglas para la contribución al proyecto, incluyendo instrucciones sobre cómo clonar el repositorio, configurar el entorno de desarrollo y enviar solicitudes de extracción.
 
-## Pruebas
+## ✔️ Pruebas
 
 Explicación de cómo ejecutar pruebas unitarias y/o de integración para verificar el correcto funcionamiento del contrato inteligente.
 
-# Despliegue
+# 📡 Despliegue
 
 Instrucciones sobre cómo desplegar el contrato inteligente en una red blockchain específica, incluyendo consideraciones de seguridad y gas.
 
-# Licencia
+# 📜 Licencia
 Información sobre la licencia utilizada para el proyecto.
 
-# Autor
+# 👤 Autor
 Información sobre el autor o autores del proyecto.
 
-# Agradecimientos
+# 🙏 Agradecimientos
 Agradecimientos y reconocimientos a personas o proyectos que han contribuido o inspirado el desarrollo del proyecto.
