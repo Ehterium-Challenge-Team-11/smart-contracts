@@ -107,7 +107,7 @@ function emitNFT(address recipient, string memory tokenURI) public {
 }
 ```
 
-En este ejemplo, el propietario del contrato, identificado por su dirección de Ethereum, tiene el privilegio de emitir nuevos NFTs de Galdappagos. Llamando a la función emitNFT y proporcionando la dirección del destinatario y la URI del token, el propietario puede crear y asignar un nuevo NFT a un destinatario específico.
+En este ejemplo, el propietario del contrato, identificado por su dirección de Ethereum, tiene el privilegio de emitir nuevos NFTs de Galdappagos. Llamando a la función `emitNFT` y proporcionando la dirección del destinatario y la URI del token, el propietario puede crear y asignar un nuevo NFT a un destinatario específico.
 
 ### Ejemplo 2: Consulta de la URI de un NFT Específico
 ```sol
@@ -117,6 +117,21 @@ function getNFTURI(uint256 tokenId) public view returns (string memory) {
     return tokenURI(tokenId);
 }
 ```
+
+En este ejemplo, se muestra cómo consultar la URI de un NFT específico dentro del contrato Galdappagos. Al llamar a la función `getNFTURI` y proporcionar el ID de token, se verifica si el token existe y se devuelve la URI asociada a ese NFT en particular. Esto permite a los usuarios obtener la información y los metadatos vinculados a un NFT específico.
+
+### Ejemplo 3: Transferencia de un NFT a Otro Propietario
+
+```sol
+// Transferencia segura de un NFT a otro propietario
+function transferNFT(uint256 tokenId, address recipient) public {
+    require(_isApprovedOrOwner(msg.sender, tokenId), "You are not the owner of the token.");
+    _safeTransfer(msg.sender, recipient, tokenId, "");
+}
+```
+
+En este ejemplo, se demuestra cómo transferir de forma segura la propiedad de un NFT a otro propietario. Al llamar a la función `transferNFT` y proporcionar el ID del token y la dirección del destinatario, el propietario actual del NFT puede transferir la propiedad a otro usuario. Se verifica si el remitente es el propietario o tiene los permisos necesarios para transferir el token, y luego se realiza la transferencia.
+
 
 # Desarrollo
 
