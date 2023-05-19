@@ -8,6 +8,7 @@ describe("Galdappagos", function () {
     let galdappagos;
     let owner;
     let otherAccount;
+    let otherAccount2;
 
 
     beforeEach(async () => {
@@ -16,17 +17,7 @@ describe("Galdappagos", function () {
 
         await galdappagos.deployed();
 
-        console.log("BadgeToken deployed to:", galdappagos.address);
-
-        // Contracts are deployed using the first signer/account by default
-        // const [owner, otherAccount] = await ethers.getSigners();
-
-        // console.log(owner);
-        // console.log(otherAccount);
-
-        /*accounts = await ethers.getSigners();
-       signer = await SignerWithAddress.from(accounts[0]);
-       */
+        console.log("Galdappagos deployed to:", galdappagos.address);
 
     });
 
@@ -59,29 +50,35 @@ describe("Galdappagos", function () {
         expect(tokenUri).to.equal(uri);
     });
 
-    /*
-  
+    /* 
     it("should not allow minting tokens by non-owners", async () => {
-      const to = accounts[1];
-      const uri = "token-uri";
-  
-      await expect(
-        galdappagos.safeMint(to, uri, { from: accounts[2] })
-      ).to.be.revertedWith("Ownable: caller is not the owner");
-  
-      const totalSupply = await galdappagos.totalSupply();
-      expect(totalSupply.toNumber()).to.equal(0);
+        const [, otherAccount,otherAccount2] = await ethers.getSigners();
+        const to = otherAccount;
+        const from = otherAccount2;
+        const uri = "token-uri";
+
+        await expect(
+            galdappagos.safeMint(to.address, uri, { from: from.address })
+        ).to.be.revertedWith("Ownable: caller is not the owner");
+
+        const totalSupply = await galdappagos.totalSupply();
+        expect(totalSupply.toNumber()).to.equal(0);
     });
-  
+
+    */
+
+
     it("should return the correct token balance for an address", async () => {
-      const to = accounts[1];
-      const uri = "token-uri";
-  
-      await galdappagos.safeMint(to, uri);
-  
-      const balance = await galdappagos.balanceOf(to);
-      expect(balance.toNumber()).to.equal(1);
+        const [owner, otherAccount] = await ethers.getSigners();
+        const uri = "token-uri";
+
+        await galdappagos.safeMint(otherAccount.address, uri);
+
+        const balance = await galdappagos.balanceOf(otherAccount.address);
+        expect(balance.toNumber()).to.equal(1);
     });
+
+    /*
   
     it("should return the correct token ID for the given index", async () => {
       const to = accounts[1];
