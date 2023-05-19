@@ -6,10 +6,6 @@ const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 
 describe("Galdappagos", function () {
     let galdappagos;
-    let owner;
-    let otherAccount;
-    let otherAccount2;
-
 
     beforeEach(async () => {
         const Galdappagos = await ethers.getContractFactory("Galdappagos");
@@ -30,8 +26,6 @@ describe("Galdappagos", function () {
         expect(await galdappagos.symbol()).to.equal('GAPPG');
     });
 
-
-
     it("should mint a token and set the correct owner and URI", async () => {
         const [, otherAccount] = await ethers.getSigners();
         const uri = "token-uri";
@@ -50,22 +44,18 @@ describe("Galdappagos", function () {
         expect(tokenUri).to.equal(uri);
     });
 
-    /* 
-    it("should not allow minting tokens by non-owners", async () => {
+    
+    it("should not allow minting tokens by non-owners", async function () {
         const [, otherAccount,otherAccount2] = await ethers.getSigners();
-        const to = otherAccount;
-        const from = otherAccount2;
         const uri = "token-uri";
 
         await expect(
-            galdappagos.safeMint(to.address, uri, { from: from.address })
+            galdappagos.connect(otherAccount2).safeMint(otherAccount.address, uri)
         ).to.be.revertedWith("Ownable: caller is not the owner");
 
         const totalSupply = await galdappagos.totalSupply();
         expect(totalSupply.toNumber()).to.equal(0);
     });
-
-    */
 
     it("should return the correct token balance for an address", async () => {
         const [, otherAccount] = await ethers.getSigners();
