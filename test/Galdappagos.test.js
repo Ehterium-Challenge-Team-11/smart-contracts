@@ -1,8 +1,5 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const { SignerWithAddress } = require('@openzeppelin/test-helpers');
-const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
-
 
 describe("Galdappagos", function () {
     let galdappagos;
@@ -13,7 +10,7 @@ describe("Galdappagos", function () {
 
         await galdappagos.deployed();
 
-        console.log("Galdappagos deployed to:", galdappagos.address);
+        // console.log("Galdappagos deployed to:", galdappagos.address);
 
     });
 
