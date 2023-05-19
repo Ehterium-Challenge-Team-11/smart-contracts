@@ -22,7 +22,7 @@ describe("Galdappagos", function () {
     });
 
     it("Should has the correct name and symbol", async function () {
-        const [owner, otherAccount] = await ethers.getSigners();
+        const [owner] = await ethers.getSigners();
 
         const total = await galdappagos.balanceOf(owner.address);
         expect(total).to.equal(0);
@@ -33,7 +33,7 @@ describe("Galdappagos", function () {
 
 
     it("should mint a token and set the correct owner and URI", async () => {
-        const [owner, otherAccount] = await ethers.getSigners();
+        const [, otherAccount] = await ethers.getSigners();
         const uri = "token-uri";
 
         await galdappagos.safeMint(otherAccount.address, uri);
@@ -67,9 +67,8 @@ describe("Galdappagos", function () {
 
     */
 
-
     it("should return the correct token balance for an address", async () => {
-        const [owner, otherAccount] = await ethers.getSigners();
+        const [, otherAccount] = await ethers.getSigners();
         const uri = "token-uri";
 
         await galdappagos.safeMint(otherAccount.address, uri);
@@ -78,28 +77,27 @@ describe("Galdappagos", function () {
         expect(balance.toNumber()).to.equal(1);
     });
 
-    /*
-  
     it("should return the correct token ID for the given index", async () => {
-      const to = accounts[1];
-      const uri = "token-uri";
-  
-      await galdappagos.safeMint(to, uri);
-  
-      const tokenId = 0;
-      const retrievedTokenId = await galdappagos.tokenByIndex(0);
-      expect(retrievedTokenId.toNumber()).to.equal(tokenId);
+        const [, otherAccount] = await ethers.getSigners();
+        const uri = "token-uri";
+
+        await galdappagos.safeMint(otherAccount.address, uri);
+
+        const tokenId = 0;
+        const retrievedTokenId = await galdappagos.tokenByIndex(0);
+        expect(retrievedTokenId.toNumber()).to.equal(tokenId);
     });
-  
+
     it("should return the correct total supply of tokens", async () => {
-      const to = accounts[1];
-      const uri1 = "token-uri-1";
-      const uri2 = "token-uri-2";
-  
-      await galdappagos.safeMint(to, uri1);
-      await galdappagos.safeMint(to, uri2);
-  
-      const totalSupply = await galdappagos.totalSupply();
-      expect(totalSupply.toNumber()).to.equal(2);
-    }); */
+        const [, otherAccount] = await ethers.getSigners();
+        
+        const uri1 = "token-uri-1";
+        const uri2 = "token-uri-2";
+
+        await galdappagos.safeMint(otherAccount.address, uri1);
+        await galdappagos.safeMint(otherAccount.address, uri2);
+
+        const totalSupply = await galdappagos.totalSupply();
+        expect(totalSupply.toNumber()).to.equal(2);
+    });
 });
